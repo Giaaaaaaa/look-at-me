@@ -1,0 +1,68 @@
+<section class="projects">
+            <div class="w column">
+                <h1 class="pro-title">Projects</h1>
+                <div class="pro-card">
+                    <img src="./images/dicee-game.png" alt="" class="pro-img">
+                    <p class="description">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam dolor aliquam, debitis est repellat voluptatibus saepe delectus minima at, ratione, nam fuga tenetur necessitatibus numquam quis? Deserunt nemo aliquid minima.
+                    </p>
+                </div>
+                <div class="pro-card">
+                    <img src="./images/dicee-game.png" alt="" class="pro-img">
+                    <p class="description">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam dolor aliquam, debitis est repellat voluptatibus saepe delectus minima at, ratione, nam fuga tenetur necessitatibus numquam quis? Deserunt nemo aliquid minima.
+                    </p>
+                </div>
+                <div class="pro-card">
+                    <img src="./images/dicee-game.png" alt="" class="pro-img">
+                    <p class="description">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam dolor aliquam, debitis est repellat voluptatibus saepe delectus minima at, ratione, nam fuga tenetur necessitatibus numquam quis? Deserunt nemo aliquid minima.
+                    </p>
+                </div>
+                <div class="pro-card">
+                    <img src="./images/dicee-game.png" alt="" class="pro-img">
+                    <p class="description">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam dolor aliquam, debitis est repellat voluptatibus saepe delectus minima at, ratione, nam fuga tenetur necessitatibus numquam quis? Deserunt nemo aliquid minima.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        /* projects ~ */
+.projects {
+    background: #EBE7E0;
+    padding-block: 2.5rem 2.5rem;
+}
+
+.projects .column {
+    display: grid;
+    grid-template-columns: repeat(4, 22%);
+    grid-template-rows: repeat(2, min-content);
+    /* justify-items: stretch; */
+    gap: 3%;
+}
+
+.pro-title {
+    grid-column: 1 / span 4;
+    place-self: center;
+    font-size: 2.5rem;
+}
+
+.pro-card {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.pro-img {
+    width: 100%;
+}
+.description {
+font-size: 1.625rem;
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 4;
+-webkit-box-orient: vertical;
+}
+/* ~ projects */
