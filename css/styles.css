@@ -9,13 +9,19 @@ font-family: 'Inter', sans-serif;
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
+/* make the scroll movement smooth 
+https://techstacker.com/smooth-scroll-to-bottom-with-javascript-css/
+*/
+html {
+scroll-behavior: smooth;
+}
 
 body {
-    --nav-height: 5rem; 
-    padding-top: var(--nav-height);
+    /* --nav-height: 5rem; 
+    padding-top: var(--nav-height); */
     min-width: 43.75rem;
     /* width: 43.75rem; */
     max-height: 118.75rem;
@@ -134,6 +140,13 @@ header {
     padding-block: 2.5rem 2.5rem;
 }
 
+/* push down all the content below the nav bar, make sure content is not covered by nav bar when click the 'bio' nav button */
+#bio-section::before{
+    content: "";
+    display: block;
+    height: 5rem;
+}
+
 #bio-section .grid {
     display: grid;
     gap: 1rem;
@@ -163,7 +176,7 @@ position: relative;
 
 .bio-arrow {
     position: relative;
-    right: -10.5rem;
+    right: -11rem;
     width: 3.6875rem;
     transform: scaleX(-1);
     transition: right 0.5s;
@@ -171,6 +184,8 @@ position: relative;
     /* margin-left: 3rem; */
     /*flip flop arrow*/
 }
+
+/* use JS to add ids dynamically in order to change their css */
 #bio-arrow {
 transform: scaleX(1);
 right: 0;
@@ -327,6 +342,7 @@ div[class^=card] img {
     background: #F7F5F2;
     text-align: center;
     padding-block: 2.5rem 2.5rem;
+    font-size: 1.75rem;
 }
 
 #find-me ul {

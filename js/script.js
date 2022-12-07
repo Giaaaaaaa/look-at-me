@@ -3,13 +3,17 @@
 1.disppear when scroll up, re-appear when scroll down
 https://www.youtube.com/watch?v=Q_XZk5Vnujw
 2.crown moves to the objects been pointed at and stays at the object been clicked. move back to previousely clicked object.
-3.pull down menu for language button????
+3.move to certain part of the page thr nav bar smoothly
+4.pull down menu for language button????
 */
 const navList = document.querySelector('.nav-list');
 const navLists = navList.querySelectorAll('li');
 const navCrown = document.querySelector('.nav-crown');
 const header = document.querySelector('header');
+const main = document.querySelector('main');
+
 let lastScrollY = window.scrollY; //initial the Y value
+
 // disppear when scroll up, re-appear when scroll down
 window.addEventListener('scroll', () => {
     if (lastScrollY < window.scrollY) { // to define it is scrolling down
@@ -31,22 +35,22 @@ window.addEventListener('resize', function () {
     animate(navCrown, currentOffsetLeft);
 })
 
-for (i = 0; i < navLists.length; i++) {
+for (let i = 0; i < navLists.length; i++) {
     navLists[i].addEventListener('mouseenter', function () {
-        let step = alignNavCrown(this);
+        let step = justifyNavCrown(this);
         animate(navCrown, step);
     });
     navLists[i].addEventListener('mouseleave', function () {
-        animate(navCrown, currentOffsetLeft);
+        animate(navCrown, currentOffsetLeft); 
     });
     navLists[i].addEventListener('click', function () {
-        currentOffsetLeft = alignNavCrown(this);
+        currentOffsetLeft = justifyNavCrown(this);
         animate(navCrown, currentOffsetLeft);
     });
 }
 
-// define how much the navCrown is going to move in order to align it to center of each nav list
-function alignNavCrown(targetItem) {
+// define how much the navCrown is going to move in order to justify itself to the center of each nav list
+function justifyNavCrown(targetItem) {
     switch (targetItem) {
         case navLists[0]:
             step = targetItem.offsetLeft;
@@ -63,6 +67,7 @@ function alignNavCrown(targetItem) {
     }
     return step;
 }
+
 
 
 
