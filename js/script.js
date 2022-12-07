@@ -23,12 +23,11 @@ window.addEventListener('scroll', () => {
 })
 
 
-console.log(navLists);
 // when the page loads up, initialise the position of navCrown, above bio.
 let currentOffsetLeft = navLists[0].offsetLeft;
 // when window resizes, reset the position of the navCrown and move it to the new position.
-window.addEventListener('resize', function() {
-    currentOffsetLeft = navLists[0].offsetLeft; 
+window.addEventListener('resize', function () {
+    currentOffsetLeft = navLists[0].offsetLeft;
     animate(navCrown, currentOffsetLeft);
 })
 
@@ -37,11 +36,11 @@ for (i = 0; i < navLists.length; i++) {
         let step = alignNavCrown(this);
         animate(navCrown, step);
     });
-    navLists[i].addEventListener('mouseleave', function() {
+    navLists[i].addEventListener('mouseleave', function () {
         animate(navCrown, currentOffsetLeft);
     });
-    navLists[i].addEventListener('click', function() {
-        currentOffsetLeft = alignNavCrown(this); 
+    navLists[i].addEventListener('click', function () {
+        currentOffsetLeft = alignNavCrown(this);
         animate(navCrown, currentOffsetLeft);
     });
 }
@@ -72,6 +71,27 @@ function alignNavCrown(targetItem) {
 --------Bio-------
 click arrow to show the bio content
  */
+
+const bioArrow = document.querySelector('.bio-arrow');
+const bioGrid = document.querySelector('#bio-section > .grid');
+const bio = document.querySelector('.bio');
+const bioContent = document.querySelector('.bio-content');
+let flag = 0;
+bioArrow.addEventListener('click', () => {
+    if (flag == 0) {
+        bioArrow.id = 'bio-arrow';
+        bio.id = 'bio';
+        bioContent.id = 'bio-content';
+        flag = 1;
+    } else {
+        bioArrow.removeAttribute('id');
+        bio.removeAttribute('id');
+        bioContent.removeAttribute('id');
+        flag = 0;
+    }
+
+
+})
 
 /* -----skills-----
 1.slide and display different skill cards autoly

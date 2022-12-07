@@ -12,10 +12,12 @@ font-family: 'Inter', sans-serif;
     box-sizing: border-box;
 }
 
+
 body {
     --nav-height: 5rem; 
     padding-top: var(--nav-height);
     min-width: 43.75rem;
+    /* width: 43.75rem; */
     max-height: 118.75rem;
     max-width: 120rem;
 }
@@ -48,11 +50,8 @@ footer {
 }
 
 
-/* centerilze wrapper*/
 .w {
     max-width: none;
-    /* min-width: 37.5rem; */
-    /* min-width: 62.5rem */
     margin: 0 2.5rem;
 }
 
@@ -62,7 +61,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    /* height: 5rem; */
+    min-width: 43.75rem;
+    max-width: 120rem;
     background-color: #000;
     color: #fff;
     padding-bottom: .625rem;
@@ -136,7 +136,7 @@ header {
 
 #bio-section .grid {
     display: grid;
-    grid-template-columns: 40% 40% auto;
+    gap: 1rem;
     place-items: center;
     /*set both justify and align*/
 }
@@ -147,17 +147,47 @@ header {
 
 .intro h4 {
     font-size: 1.25rem;
+    text-align: center;
+}
+
+.bio {
+position: relative;
 }
 
 .bio-content {
-    /* display: none; */
+    display: none;
+/* transition: all 5s; */
+
     /* hide bio content*/
 }
 
 .bio-arrow {
-    width: 4.6875rem;
+    position: relative;
+    right: -10.5rem;
+    width: 3.6875rem;
     transform: scaleX(-1);
+    transition: right 0.5s;
+
+    /* margin-left: 3rem; */
     /*flip flop arrow*/
+}
+#bio-arrow {
+transform: scaleX(1);
+right: 0;
+transition: right 0.5s;
+}
+
+#bio {
+display: flex;
+align-items: center;
+gap: 1.5rem;
+justify-content: center;
+transition: all 5s;
+}
+
+#bio-content {
+display: block;
+width: 35%;
 }
 
 .profile-img {
