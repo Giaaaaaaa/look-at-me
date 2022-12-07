@@ -11,12 +11,15 @@ font-family: 'Inter', sans-serif;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-min-width: 43.75rem;
-/* max-width: 84.375rem; */
-max-height: 118.75rem;
-max-width: 120rem;
+    --nav-height: 5rem; 
+    padding-top: var(--nav-height);
+    min-width: 43.75rem;
+    max-height: 118.75rem;
+    max-width: 120rem;
 }
+
 h1,
 h2,
 h3,
@@ -55,9 +58,15 @@ footer {
 
 /*header ~ */
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 5rem; */
     background-color: #000;
     color: #fff;
     padding-bottom: .625rem;
+    z-index: 9999;
 }
 
 .nav-bar {
@@ -65,16 +74,44 @@ header {
     grid-template-columns: 3.75rem 3.75rem auto 40%;
     align-items: end;
     gap: .625rem;
+    position: relative;
+}
+
+.nav-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+}
+
+.nav-show {
+    transform: translateY(0%);
+    transition: transform 0.5s;
 }
 
 .nav-bar h1 {
     font-size: 2.5rem;
 }
 
-.crown img {
+.crown {
+    /* position: relative; */
     width: 2rem;
+}
+
+.crown img {
+    width: 100%;
     margin-bottom: -0.6rem;
     margin-left: .35rem;
+}
+
+.nav-crown {
+    position: absolute;
+    top: -0.6875rem;
+    right: 19.4375rem;
+    width: 2rem;
+    margin-bottom: -0.6rem;
+}
+
+.nav-crown img {
+    width: 100%;
 }
 
 .global img {
@@ -113,7 +150,7 @@ header {
 }
 
 .bio-content {
-    display: none;
+    /* display: none; */
     /* hide bio content*/
 }
 
@@ -221,62 +258,71 @@ div[class^=card] img {
     background: #EBE7E0;
     padding-block: 2.5rem 2.5rem;
 }
+
 .pro-title {
     font-size: 3.125rem;
     text-align: center;
 }
+
 .flex {
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-gap: 1.5rem;
-max-width: 120rem;
-margin: 0 auto;
-padding: 1.25rem .625rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 1.25rem .625rem;
 }
+
 .pro-card {
     max-width: 21.875rem;
 }
 
 .pro-card a img {
-width: 80%;
-aspect-ratio: 1 / 1;
-object-fit: cover;
-border-radius: 10%;
-box-shadow: 0 0 0.15rem 0.15rem rgb(255, 255, 255);
-transform: translateX(12%);
+    width: 80%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10%;
+    box-shadow: 0 0 0.15rem 0.15rem rgb(255, 255, 255);
+    transform: translateX(12%);
 }
+
 /* ~ projects */
 
 /* find-me ~*/
 #find-me {
-overflow: hidden;
-background: #F7F5F2;
-text-align: center;
-padding-block: 2.5rem 2.5rem;
+    overflow: hidden;
+    background: #F7F5F2;
+    text-align: center;
+    padding-block: 2.5rem 2.5rem;
 }
+
 #find-me ul {
     display: flex;
     justify-content: center;
     gap: 3.125rem;
     padding-top: 2.25rem;
 }
+
 #find-me ul li {
-float: left;
-width: 3.125rem;
+    float: left;
+    width: 3.125rem;
 
 }
+
 #find-me img {
-width: 100%;
+    width: 100%;
 }
+
 .fm-con {
-display: none;
+    display: none;
 }
+
 /* ~ find-me */
 
 .copyright {
-text-align: center;
-padding-block: 2.5rem 2.5rem;
+    text-align: center;
+    padding-block: 2.5rem 2.5rem;
 }

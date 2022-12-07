@@ -1,5 +1,5 @@
 function animate(obj, target, callback) {
-    // console.log(callback);  callback = function() {}  调用的时候 callback()
+    // console.log('animate started');
 
     // 先清除以前的定时器，只保留当前的一个定时器执行
     clearInterval(obj.timer);
