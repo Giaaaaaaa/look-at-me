@@ -152,24 +152,47 @@ cards.forEach((card, i) => {
 
 // next arrow
 arrowR.addEventListener('click', () => {
+    let currentIndex = getCurrentIndexAndUnselect();
+    currentIndex++;
+    if (currentIndex < cards.length){
+    cards[currentIndex].classList.add('card-showed');
+    buttons[currentIndex].classList.add('selected');
+    } else {
+        cards[0].classList.add('card-showed');
+        buttons[0].classList.add('selected');
+    }
+    
+
+});
+
+arrowL.addEventListener('click', () => {
+    let currentIndex = getCurrentIndexAndUnselect();
+    currentIndex--;
+    if (currentIndex < 0){
+    cards[cards.length-1].classList.add('card-showed');
+    buttons[cards.length-1].classList.add('selected');
+    } else {
+        cards[currentIndex].classList.add('card-showed');
+        buttons[currentIndex].classList.add('selected');
+    }
+    
+
+});
+
+function getCurrentIndexAndUnselect(){
     let showedCard = document.querySelector('.card-showed');
     let selectedBtn = document.querySelector('.selected');
-    // console.log(showedCard.dataset.index);
-    // console.log(selectedBtn.dataset.index);
-    let showedCardIndex = showedCard.dataset.index;
-    let selectedBtnIndex = selectedBtn.dataset.index;
+
+    //as the cards and btns share the same index
+    let currentIndex = showedCard.dataset.index;
 
     // un-select all cards
     cards.forEach(card => card.classList.remove('card-showed'));
     // un-select all buttons
     buttons.forEach(button => button.classList.remove('selected'));
-    showedCardIndex++;
-    selectedBtnIndex++;
-    cards[showedCardIndex].classList.add('card-showed');
-    buttons[selectedBtnIndex].classList.add('selected');
 
-});
-
+    return currentIndex;
+}
 
 
 /*-------projects------ 
