@@ -154,32 +154,32 @@ cards.forEach((card, i) => {
 arrowR.addEventListener('click', () => {
     let currentIndex = getCurrentIndexAndUnselect();
     currentIndex++;
-    if (currentIndex < cards.length){
-    cards[currentIndex].classList.add('card-showed');
-    buttons[currentIndex].classList.add('selected');
+    if (currentIndex < cards.length) {
+        cards[currentIndex].classList.add('card-showed');
+        buttons[currentIndex].classList.add('selected');
     } else {
         cards[0].classList.add('card-showed');
         buttons[0].classList.add('selected');
     }
-    
+
 
 });
 
 arrowL.addEventListener('click', () => {
     let currentIndex = getCurrentIndexAndUnselect();
     currentIndex--;
-    if (currentIndex < 0){
-    cards[cards.length-1].classList.add('card-showed');
-    buttons[cards.length-1].classList.add('selected');
+    if (currentIndex < 0) {
+        cards[cards.length - 1].classList.add('card-showed');
+        buttons[cards.length - 1].classList.add('selected');
     } else {
         cards[currentIndex].classList.add('card-showed');
         buttons[currentIndex].classList.add('selected');
     }
-    
+
 
 });
 
-function getCurrentIndexAndUnselect(){
+function getCurrentIndexAndUnselect() {
     let showedCard = document.querySelector('.card-showed');
     let selectedBtn = document.querySelector('.selected');
 
@@ -199,6 +199,8 @@ function getCurrentIndexAndUnselect(){
 1.link to the pages hosted on GitHub etc.
 2.mouseenter to emphazise the description 
 */
+
+
 
 /*---------find me--------
     mouseenter to show more info

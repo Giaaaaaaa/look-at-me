@@ -224,13 +224,19 @@ header {
 /* skills ~*/
 #skills-section {
     background: #F7F5F2;
-    padding-block: 2.5rem 2.5rem;
+    padding-bottom: 2.5rem;
+}
+#skills-section::before {
+    content: "";
+    display: block;
+    height: 5rem;
 }
 
 #skills-section .grid {
     display: grid;
-    grid-template-columns: 10% 80% 10%;
+    grid-template-columns: auto 80% auto;
     grid-template-rows: 90% 10%;
+    gap: .625rem;
     place-items: center;
     min-height: 18.75rem;
 }
@@ -268,41 +274,33 @@ header {
     width: 31.25rem;
     /* overflow: hidden; */
     /*hide other cards*/
+/* transition: visibility 0s, opacity 0.5s linear; */
+
 }
 
 /* set the layout within every each card */
 .card {
-    /* display: grid; */
-    /* gap: 1rem;
-    place-items: center; */
     display: none;
+    /* visibility: hidden; */
+    /* opacity: 0; */
     text-align: center;
     width: 31.25rem;
+    transition: all 0.5s;
+    
+
 }
 
 .card img {
     width: 6.25rem;
 }
+.card h2 {
+padding-block: .625rem 1.25rem;
+}
 
-div.card-showed {
+.card-showed {
 display: block;
 }
 
-.card-1 {
-    /* display: none; */
-    background-color: pink;
-}
-
-.card-2 {
-    background-color: hotpink;
-}
-
-.card-3 {
-    background-color: firebrick;
-}
-.card-4 {
-    background-color: purple;
-}
 .carousel-nav {
     grid-row: 2;
     grid-column: 2 / 3;
@@ -328,12 +326,18 @@ display: block;
 /* projects ~ */
 #projects {
     background: #EBE7E0;
-    padding-block: 2.5rem 2.5rem;
+    padding-bottom:2.5rem;
+}
+#projects::before {
+    content: "";
+    display: block;
+    height: 5.5rem;
 }
 
 .pro-title {
     font-size: 3.125rem;
     text-align: center;
+    padding-bottom: 1.25rem;
 }
 
 .flex {
@@ -352,13 +356,20 @@ display: block;
     max-width: 21.875rem;
 }
 
-.pro-card a img {
+.pro-card a {
+perspective: 15rem;
+}
+.pro-card img {
     width: 80%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 10%;
     box-shadow: 0 0 0.15rem 0.15rem rgb(255, 255, 255);
     transform: translateX(12%);
+}
+
+.pro-card img:hover {
+    box-shadow: 0 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
 }
 
 /* ~ projects */
