@@ -94,8 +94,6 @@ bioArrow.addEventListener('click', () => {
         bioContent.removeAttribute('id');
         flag = 0;
     }
-
-
 })
 
 /* -----skills-----
