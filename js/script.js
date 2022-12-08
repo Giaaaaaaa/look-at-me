@@ -102,12 +102,15 @@ bioArrow.addEventListener('click', () => {
 3.click circle to choose cards
 */
 const arrowR = document.querySelector('.arrow-r');
+const arrowL = document.querySelector('.arrow-l');
 
 // https://www.youtube.com/watch?v=XtFlpgaLbZ4&list=PLPO_K_9yOHNF4rG0aMCABVyi_q1wUo3GG&index=7
 
-document.querySelectorAll('.carousel-container').forEach((carouselContainer) => {
-    const cards = carouselContainer.querySelectorAll('.card');
-    console.log(cards);
+const carouselContainer = document.querySelectorAll('.carousel-container');
+
+carouselContainer.forEach((carouselContainer) => {
+    //global var
+    cards = carouselContainer.querySelectorAll('.card');
 
     //create an btn array of three items. the num of cards = 3
     const carouselBtns = Array.from(cards, () => {
@@ -118,9 +121,12 @@ document.querySelectorAll('.carousel-container').forEach((carouselContainer) => 
     arrowR.insertAdjacentHTML('afterend',
         `<div class="carousel-nav">${carouselBtns.join("")}</div>`
     );
-
-    const buttons = document.querySelectorAll('.carousel-btn');
+    //global var
+    buttons = document.querySelectorAll('.carousel-btn');
     buttons.forEach((button, i) => {
+        //set data-index for every btn
+
+        button.setAttribute('data-index', i);
         button.addEventListener("click", () => {
             // un-select all cards
             cards.forEach(card => card.classList.remove('card-showed'));
@@ -139,7 +145,30 @@ document.querySelectorAll('.carousel-container').forEach((carouselContainer) => 
 
 });
 
+//set data-index for every card
+cards.forEach((card, i) => {
+    card.setAttribute('data-index', i);
+});
 
+// next arrow
+arrowR.addEventListener('click', () => {
+    let showedCard = document.querySelector('.card-showed');
+    let selectedBtn = document.querySelector('.selected');
+    // console.log(showedCard.dataset.index);
+    // console.log(selectedBtn.dataset.index);
+    let showedCardIndex = showedCard.dataset.index;
+    let selectedBtnIndex = selectedBtn.dataset.index;
+
+    // un-select all cards
+    cards.forEach(card => card.classList.remove('card-showed'));
+    // un-select all buttons
+    buttons.forEach(button => button.classList.remove('selected'));
+    showedCardIndex++;
+    selectedBtnIndex++;
+    cards[showedCardIndex].classList.add('card-showed');
+    buttons[selectedBtnIndex].classList.add('selected');
+
+});
 
 
 
