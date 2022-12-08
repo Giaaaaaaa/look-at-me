@@ -41,7 +41,7 @@ for (let i = 0; i < navLists.length; i++) {
         animate(navCrown, step);
     });
     navLists[i].addEventListener('mouseleave', function () {
-        animate(navCrown, currentOffsetLeft); 
+        animate(navCrown, currentOffsetLeft);
     });
     navLists[i].addEventListener('click', function () {
         currentOffsetLeft = justifyNavCrown(this);
@@ -101,6 +101,47 @@ bioArrow.addEventListener('click', () => {
 2.click prev and next btn to change cards
 3.click circle to choose cards
 */
+const arrowR = document.querySelector('.arrow-r');
+
+// https://www.youtube.com/watch?v=XtFlpgaLbZ4&list=PLPO_K_9yOHNF4rG0aMCABVyi_q1wUo3GG&index=7
+
+document.querySelectorAll('.carousel-container').forEach((carouselContainer) => {
+    const cards = carouselContainer.querySelectorAll('.card');
+    console.log(cards);
+
+    //create an btn array of three items. the num of cards = 3
+    const carouselBtns = Array.from(cards, () => {
+        return `<span class="carousel-btn"></span>`;
+    });
+
+    // join the btn array into one string of HTML code and insert it after the arrow-r element
+    arrowR.insertAdjacentHTML('afterend',
+        `<div class="carousel-nav">${carouselBtns.join("")}</div>`
+    );
+
+    const buttons = document.querySelectorAll('.carousel-btn');
+    buttons.forEach((button, i) => {
+        button.addEventListener("click", () => {
+            // un-select all cards
+            cards.forEach(card => card.classList.remove('card-showed'));
+            // un-select all buttons
+            buttons.forEach(button => button.classList.remove('selected'));
+            // add the class to selected card and button
+            cards[i].classList.add('card-showed');
+            button.classList.add('selected');
+
+        });
+    });
+
+    // Select the first item on page load
+    cards[0].classList.add("card-showed");
+    buttons[0].classList.add("selected");
+
+});
+
+
+
+
 
 /*-------projects------ 
 1.link to the pages hosted on GitHub etc.
