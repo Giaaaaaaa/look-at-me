@@ -299,6 +299,7 @@ padding-block: .625rem 1.25rem;
 
 .card-showed {
 display: block;
+animation: fadeIn 1s;
 }
 
 .carousel-nav {
@@ -319,6 +320,12 @@ display: block;
 
 .carousel-nav .selected {
     background-color: rgba(0, 0, 0,.5);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0;}
+    to { opacity: 1;}
+    
 }
 
 /* ~ skills*/
