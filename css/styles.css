@@ -381,7 +381,7 @@ header {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 10%;
-    box-shadow: 0 0 0.15rem 0.15rem rgb(255, 255, 255);
+    box-shadow: 0 0 0.15rem 0.15rem #ffffff;
     transform: translateX(12%);
 }
 
@@ -401,28 +401,55 @@ header {
 }
 
 
-#find-me ul {
+.fm {
     display: flex;
     justify-content: center;
     gap: 3.125rem;
     padding-top: 2.25rem;
 }
 
-#find-me ul li {
-    float: left;
+.fm-list {
+    /* float: left; */
+    position: relative;
     width: 3.125rem;
-
 }
 
-#find-me ul li::after {
-content: "";
 
-}
-
-#find-me img {
+.fm-link img {
     width: 100%;
 }
 
+.fm-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(204, 204, 204, 0);
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.fm-link:hover::before{
+    background-color: rgba(235, 231, 224, .6);
+
+}
+.fm-con {
+    position: relative;
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 1.1rem;
+    padding-top: 1rem;
+}
+.fm-con li {
+position: absolute;
+display: none;
+left: 50%;
+transform: translateX(-50%);
+padding: 0.5rem;
+border-radius: 10px;
+background-color: #EBE7E0;
+}
 
 
 /* .fm-bubble {

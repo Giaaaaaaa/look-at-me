@@ -205,3 +205,15 @@ function getCurrentIndexAndUnselect() {
 /*---------find me--------
     mouseenter to show more info
 */
+const fmLinks = document.querySelectorAll(".fm-link");
+const fmConLists = document.querySelectorAll(".fm-con > li");
+console.log(fmLinks);
+console.log(fmConLists);
+fmLinks.forEach((link, i) => {
+    link.addEventListener("mouseenter", () => {
+        fmConLists[i].style.display = 'block';
+    });
+    link.addEventListener("mouseleave", () => {
+        fmConLists[i].style.display = 'none';
+    });
+});
