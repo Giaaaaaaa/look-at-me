@@ -233,8 +233,9 @@ header {
 
 /* skills ~*/
 #skills-section {
-    background: #F7F5F2;
+    background: #F7F5F2; 
     padding-bottom: 2.5rem;
+    
 }
 
 #skills-section::before {
@@ -362,33 +363,67 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
     max-width: 120rem;
     margin: 0 auto;
     padding: 1.25rem .625rem;
 }
 
 .pro-card {
-    max-width: 21.875rem;
+    /* max-width: 20rem; */
 }
 
 .pro-card a {
-    perspective: 15rem;
-}
-
-.pro-card img {
-    width: 80%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+    display: block;
+    position: relative;
+    max-width: 18rem;
     border-radius: 10%;
     box-shadow: 0 0 0.15rem 0.15rem #ffffff;
-    transform: translateX(12%);
+    /* transform: translateX(12%); */
+    overflow: hidden;
+
 }
 
-.pro-card img:hover {
+.pro-card a img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit:cover;
+    /* border-radius: 10%;
+    box-shadow: 0 0 0.15rem 0.15rem #ffffff;
+    transform: translateX(12%); */
+}
+
+.pro-card a:hover {
     box-shadow: 0 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
 }
 
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: none;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translate(-50%);
+    background: linear-gradient(360deg, #EBE7E0 31.25%, rgba(247, 245, 242, 0.513761) 66.67%);
+    transition: all 0.3s;
+}
+
+.description:hover {
+    opacity: 1;
+}
+.description span {
+position: absolute;
+bottom: 10%;
+left: 50%;
+transform: translate(-50%);
+font-size: 1.3rem;
+font-weight: 900;
+text-shadow: #000 1px 0 10px;
+/* text-decoration: underline; */
+font-family: 'ABeeZee', sans-serif;
+}
 /* ~ projects */
 
 /* find-me ~*/
@@ -437,9 +472,10 @@ header {
 }
 .fm-con {
     position: relative;
+    padding-top: 1rem;
+    font-weight: 800;
     font-family: 'ABeeZee', sans-serif;
     font-size: 1.1rem;
-    padding-top: 1rem;
 }
 .fm-con li {
 position: absolute;

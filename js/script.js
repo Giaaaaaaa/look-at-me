@@ -199,6 +199,18 @@ function getCurrentIndexAndUnselect() {
 1.link to the pages hosted on GitHub etc.
 2.mouseenter to emphazise the description 
 */
+const proLinks = document.querySelectorAll('.pro-card > a');
+const proDes = document.querySelectorAll('.description');
+console.log(proLinks);
+console.log(proDes);
+proLinks.forEach((link, i) => {
+link.addEventListener('mouseenter', ()=>{
+proDes[i].style.display = "block";
+});
+link.addEventListener('mouseleave', ()=>{
+    proDes[i].style.display = "none";
+    });
+});
 
 
 
@@ -207,8 +219,8 @@ function getCurrentIndexAndUnselect() {
 */
 const fmLinks = document.querySelectorAll(".fm-link");
 const fmConLists = document.querySelectorAll(".fm-con > li");
-console.log(fmLinks);
-console.log(fmConLists);
+// console.log(fmLinks);
+// console.log(fmConLists);
 fmLinks.forEach((link, i) => {
     link.addEventListener("mouseenter", () => {
         fmConLists[i].style.display = 'block';
