@@ -201,8 +201,6 @@ function getCurrentIndexAndUnselect() {
 */
 const proLinks = document.querySelectorAll('.pro-card > a');
 const proDes = document.querySelectorAll('.description');
-// console.log(proLinks);
-// console.log(proDes);
 proLinks.forEach((link, i) => {
 link.addEventListener('mouseenter', ()=>{
 proDes[i].style.display = "block";

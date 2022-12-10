@@ -365,6 +365,7 @@ header {
     align-items: center;
     gap: 2rem;
     max-width: 120rem;
+    max-height: 120rem;
     margin: 0 auto;
     padding: 1.25rem .625rem;
 }
