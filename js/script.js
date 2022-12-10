@@ -219,8 +219,6 @@ link.addEventListener('mouseleave', ()=>{
 */
 const fmLinks = document.querySelectorAll(".fm-link");
 const fmConLists = document.querySelectorAll(".fm-con > li");
-// console.log(fmLinks);
-// console.log(fmConLists);
 fmLinks.forEach((link, i) => {
     link.addEventListener("mouseenter", () => {
         fmConLists[i].style.display = 'block';
