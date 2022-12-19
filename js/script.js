@@ -68,9 +68,20 @@ function justifyNavCrown(targetItem) {
     return step;
 }
 
+//show language btns
 
-
-
+const global = document.querySelector('.global');
+const languageBtn = document.querySelector('.language-btns');
+let btnFlag = 0;
+global.addEventListener('click', () => {
+    if(btnFlag == 0) {
+        languageBtn.style.visibility = "visible";
+        btnFlag = 1;
+    } else {
+        languageBtn.style.visibility = "hidden";
+        btnFlag = 0;
+    }
+})
 
 /*
 --------Bio-------
@@ -202,11 +213,11 @@ function getCurrentIndexAndUnselect() {
 const proLinks = document.querySelectorAll('.pro-card > a');
 const proDes = document.querySelectorAll('.description');
 proLinks.forEach((link, i) => {
-link.addEventListener('mouseenter', ()=>{
-proDes[i].style.display = "block";
-});
-link.addEventListener('mouseleave', ()=>{
-    proDes[i].style.display = "none";
+    link.addEventListener('mouseenter', () => {
+        proDes[i].style.display = "block";
+    });
+    link.addEventListener('mouseleave', () => {
+        proDes[i].style.display = "none";
     });
 });
 

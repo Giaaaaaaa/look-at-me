@@ -25,7 +25,7 @@ body {
     min-width: 43.75rem;
     /* width: 43.75rem; */
     max-height: 118.75rem;
-    max-width: 120rem;
+    /* max-width: 120rem; */
 }
 
 h1,
@@ -79,7 +79,7 @@ header {
     left: 0;
     width: 100%;
     min-width: 43.75rem;
-    max-width: 120rem;
+    /* max-width: 120rem; */
     background-color: #000;
     color: #fff;
     padding-bottom: .625rem;
@@ -131,8 +131,18 @@ header {
     width: 100%;
 }
 
+
 .global img {
     width: 1.875rem;
+}
+
+.language-btns {
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    margin-left: -1.5rem;
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 0.9rem;
 }
 
 .nav-list {
@@ -233,9 +243,9 @@ header {
 
 /* skills ~*/
 #skills-section {
-    background: #F7F5F2; 
+    background: #F7F5F2;
     padding-bottom: 2.5rem;
-    
+
 }
 
 #skills-section::before {
@@ -388,7 +398,7 @@ header {
 .pro-card a img {
     width: 100%;
     aspect-ratio: 1 / 1;
-    object-fit:cover;
+    object-fit: cover;
     /* border-radius: 10%;
     box-shadow: 0 0 0.15rem 0.15rem #ffffff;
     transform: translateX(12%); */
@@ -414,17 +424,19 @@ header {
 .description:hover {
     opacity: 1;
 }
+
 .description span {
-position: absolute;
-bottom: 10%;
-left: 50%;
-transform: translate(-50%);
-font-size: 1.3rem;
-font-weight: 900;
-text-shadow: #000 1px 0 10px;
-/* text-decoration: underline; */
-font-family: 'ABeeZee', sans-serif;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-shadow: #000 1px 0 10px;
+    /* text-decoration: underline; */
+    font-family: 'ABeeZee', sans-serif;
 }
+
 /* ~ projects */
 
 /* find-me ~*/
@@ -467,10 +479,11 @@ font-family: 'ABeeZee', sans-serif;
     transition: all 0.2s;
 }
 
-.fm-link:hover::before{
+.fm-link:hover::before {
     background-color: rgba(235, 231, 224, .6);
 
 }
+
 .fm-con {
     position: relative;
     padding-top: 1rem;
@@ -478,14 +491,15 @@ font-family: 'ABeeZee', sans-serif;
     font-family: 'ABeeZee', sans-serif;
     font-size: 1.1rem;
 }
+
 .fm-con li {
-position: absolute;
-display: none;
-left: 50%;
-transform: translateX(-50%);
-padding: 0.5rem;
-border-radius: 10px;
-background-color: #EBE7E0;
+    position: absolute;
+    display: none;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: #EBE7E0;
 }
 
 /* ~ find-me */
