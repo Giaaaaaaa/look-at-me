@@ -1,11 +1,8 @@
 # My Personal Website
-What the project does
-# This my personal website for the fianl project
-Why the project is useful
-# Check out my info, experience and skills
-How users can get started with the project
+Welcome to check out my personal website.
+This my personal website for the fianl project of Academy Xi
+Check out my info, experience and skills
 # Head to the url
-Where users can get help with your project
+go to ---> https://giaaaaaaa.github.io/look-at-me/
 # Contact me from the website
-Who maintains and contributes to the project
 # Wenjia
